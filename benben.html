@@ -2,26 +2,46 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Random YouTube Redirect</title>
+<title>Random YouTube Fullscreen</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
 </head>
 <body>
 <script>
-const links = [
-  "https://www.youtube.com/watch?v=frsEJWz4Ii4&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf",
-  "https://www.youtube.com/watch?v=As3WmaK2w4M&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf",
-  "https://www.youtube.com/watch?v=G_uEUcJiY90&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf",
-  "https://www.youtube.com/watch?v=KFcNOAU-QT8&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf",
-  "https://www.youtube.com/watch?v=gn6U3yp4m5o&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf",
-  "https://www.youtube.com/watch?v=frsEJWz4Ii4&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf",
-  "https://www.youtube.com/watch?v=8pNBOQ8wyqo&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf",
-  "https://www.youtube.com/watch?v=tIn00CvKQZk&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf",
-  "https://www.youtube.com/watch?v=TdS974ObtQ8&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf",
-  "https://www.youtube.com/watch?v=aDFI8M3wD_4&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf",
-  "https://www.youtube.com/watch?v=qkjZSgK6HTo&list=PLPE1N_PxGgNZch7fyjIKv54KXOk-_zByf"
+const videos = [
+  "frsEJWz4Ii4",
+  "As3WmaK2w4M",
+  "G_uEUcJiY90",
+  "KFcNOAU-QT8",
+  "gn6U3yp4m5o",
+  "8pNBOQ8wyqo",
+  "tIn00CvKQZk",
+  "TdS974ObtQ8",
+  "aDFI8M3wD_4",
+  "qkjZSgK6HTo"
 ];
 
-const randomLink = links[Math.floor(Math.random() * links.length)];
-window.location.href = randomLink;
+const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+
+document.body.innerHTML = `
+<iframe 
+  src="https://www.youtube.com/embed/${randomVideo}?autoplay=1&controls=0&rel=0&modestbranding=1&loop=1&playlist=${randomVideo}" 
+  allow="autoplay; fullscreen" 
+  allowfullscreen>
+</iframe>
+`;
 </script>
 </body>
 </html>
