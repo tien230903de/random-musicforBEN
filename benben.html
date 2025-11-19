@@ -1,26 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Random YouTube Fullscreen</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    background: black;
-  }
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-</style>
-</head>
-<body>
+<body style="margin:0;overflow:hidden;">
 <script>
-const videos = [
+const links = [
   "frsEJWz4Ii4",
   "As3WmaK2w4M",
   "G_uEUcJiY90",
@@ -32,15 +14,10 @@ const videos = [
   "aDFI8M3wD_4",
   "qkjZSgK6HTo"
 ];
-
-const randomVideo = videos[Math.floor(Math.random() * videos.length)];
-
+const randomVideo = links[Math.floor(Math.random() * links.length)];
 document.body.innerHTML = `
-<iframe 
-  src="https://www.youtube.com/embed/${randomVideo}?autoplay=1&controls=0&rel=0&modestbranding=1&loop=1&playlist=${randomVideo}" 
-  allow="autoplay; fullscreen" 
-  allowfullscreen>
-</iframe>
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${randomVideo}?autoplay=1&controls=0&rel=0&modestbranding=1"
+frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 `;
 </script>
 </body>
