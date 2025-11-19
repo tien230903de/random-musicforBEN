@@ -2,18 +2,20 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Random YouTube Fullscreen</title>
+<title>Random YouTube Player</title>
 <style>
   html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden;
     background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
   iframe {
-    width: 100%;
-    height: 100%;
+    width: 640px;   /* Chiều rộng player */
+    height: 360px;  /* Chiều cao player */
     border: 0;
   }
 </style>
@@ -37,10 +39,8 @@ const randomVideo = videos[Math.floor(Math.random() * videos.length)];
 
 document.body.innerHTML = `
 <iframe 
-  src="https://www.youtube.com/embed/${randomVideo}?autoplay=1&controls=1&rel=0&modestbranding=1&loop=1&playlist=${randomVideo}" 
-  allow="autoplay; fullscreen" 
-  allowfullscreen>
-</iframe>
+  src="https://www.youtube.com/embed/${randomVideo}?autoplay=1&controls=0&rel=0&modestbranding=1&loop=1&playlist=${randomVideo}"
+></iframe>
 `;
 </script>
 </body>
